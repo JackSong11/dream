@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 使用parent标签指定当前工程的父工程 -->
+    <parent>
+        <!-- 父工程的坐标 -->
+        <artifactId>dream</artifactId>
+        <groupId>com.song.dream</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 子工程的坐标 -->
+    <!-- 如果子工程坐标中的groupId和version与父工程一致，那么可以省略 -->
+    <!-- <groupId>com.song.dream</groupId>-->
+    <artifactId>dream-starter</artifactId>
+    <!-- <version>1.0.0</version>-->
+
+
+    <!-- 子工程引用父工程中的依赖信息时，可以把版本号去掉。	-->
+    <!-- 把版本号去掉就表示子工程中这个依赖的版本由父工程决定。 -->
+    <!-- 具体来说是由父工程的dependencyManagement来决定。 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.3.23</version>
+        </dependency>
+    </dependencies>
+
+
+
+
+
+
+<!--    <properties>-->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--    </properties>-->
+
+</project>

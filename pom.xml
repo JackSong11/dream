@@ -3,10 +3,68 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- The Basics -->
-    <groupId>...</groupId>
-    <artifactId>...</artifactId>
-    <version>...</version>
-    <packaging>...</packaging>
+    <groupId>com.song.dream</groupId>
+    <artifactId>dream</artifactId>
+    <version>1.0.0</version>
+
+    <modules>
+        <module>dream-starter</module>
+        <module>dream-web</module>
+        <module>dream-service</module>
+    </modules>
+
+    <!-- 当前工程作为父工程，它要去管理子工程，所以打包方式必须是 pom -->
+    <packaging>pom</packaging>
+
+    <!-- 通过自定义属性，统一指定Spring的版本 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 自定义标签，维护Spring版本数据 -->
+        <dream.spring.version>6.0.6</dream.spring.version>
+    </properties>
+
+    <!-- 使用dependencyManagement标签配置对依赖的管理 -->
+    <!-- 被管理的依赖并没有真正被引入到工程 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${dream.spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- build 标签：意思是告诉 Maven，你的构建行为，我要开始定制了！ -->
+    <!-- build 标签：用来配置对构建过程的定制 -->
+    <build>
+        <!-- plugins 标签：Maven 你给我听好了，你给我构建的时候要用到这些插件！ -->
+        <!-- plugins 标签：定制化构建过程中所使用到的插件 -->
+        <plugins>
+            <!-- plugin 标签：这是我要指定的一个具体的插件 -->
+            <plugin>
+                <!-- 插件的坐标。此处引用的 maven-compiler-plugin 插件不是第三方的，是一个 Maven 自带的插件。 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+
+                <!-- configuration 标签：配置 maven-compiler-plugin 插件 -->
+                <configuration>
+                    <!-- 具体配置信息会因为插件不同、需求不同而有所差异 -->
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- plugin 标签：一个具体插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 <!--    <dependencies>...</dependencies>-->
 <!--    <parent>...</parent>-->
 <!--    <dependencyManagement>...</dependencyManagement>-->
