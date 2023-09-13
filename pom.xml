@@ -7,6 +7,14 @@
     <artifactId>dream</artifactId>
     <version>1.0.0</version>
 
+    <!-- parent标签有时间学一下-->
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>2.7.10</version>-->
+<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+<!--    </parent>-->
+
     <modules>
         <module>dream-starter</module>
         <module>dream-web</module>
@@ -20,7 +28,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 自定义标签，维护Spring版本数据 -->
-        <dream.spring.version>6.0.6</dream.spring.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
     </properties>
 
     <!-- 使用dependencyManagement标签配置对依赖的管理 -->
@@ -28,9 +36,12 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${dream.spring.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <!-- https://blog.csdn.net/wangjun5159/article/details/104298131 -->
             </dependency>
         </dependencies>
     </dependencyManagement>
