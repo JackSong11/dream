@@ -29,7 +29,6 @@
         <dependency>
             <groupId>com.song.dream</groupId>
             <artifactId>dream-web</artifactId>
-            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

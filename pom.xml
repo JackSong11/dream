@@ -20,6 +20,7 @@
         <module>dream-web</module>
         <module>dream-service</module>
         <module>dream-dal</module>
+        <module>dream-common</module>
     </modules>
 
     <!-- 当前工程作为父工程，它要去管理子工程，所以打包方式必须是 pom -->

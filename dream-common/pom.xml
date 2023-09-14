@@ -9,26 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 数据访问层(Data Access Layer) -->
-    <artifactId>dream-dal</artifactId>
+    <artifactId>dream-common</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
-
         <dependency>
-            <groupId>com.song.dream</groupId>
-            <artifactId>dream-common</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-
     </dependencies>
+
 </project>
