@@ -1,15 +1,17 @@
 package com.song.dream.dal.po;
 
 import java.util.Date;
-//import com.song.dream.common;
+import com.song.dream.common.*;
+import com.song.dream.common.po.BasePO;
+import lombok.Data;
 
 /**
  * 文章表
  * @TableName blog_article
  */
 //@TableName(value ="blog_article")
-//@Data
-public class BlogArticle {
+@Data
+public class BlogArticle extends BasePO {
 
     private static final long serialVersionUID = 1L;
 
