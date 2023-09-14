@@ -1,4 +1,4 @@
-package com.song.dream;
+package com.song.dream.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
