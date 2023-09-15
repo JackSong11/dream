@@ -1,7 +1,12 @@
 package com.song.dream.web.controller;
 
+import com.song.dream.dal.po.BlogArticlePO;
+import com.song.dream.service.core.BlogArticleService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @ClassName ArticleController
@@ -13,8 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ArticleController {
 
+    @Resource private BlogArticleService blogArticleService;
+
     @GetMapping("query")
-    public String queryArticle(){
-        return "hello yangyang";
+    public List<BlogArticlePO> queryArticle(){
+        List<BlogArticlePO> list = blogArticleService.list();
+        return list;
     }
 }

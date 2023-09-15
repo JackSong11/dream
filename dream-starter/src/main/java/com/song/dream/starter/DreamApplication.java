@@ -1,5 +1,6 @@
 package com.song.dream.starter;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  **/
 @SpringBootApplication(scanBasePackages = {"com.song.dream"})
+@MapperScan(value = {"com.song.dream.dal.mapper"})
 public class DreamApplication {
 
     public static void main(String[] args) {
