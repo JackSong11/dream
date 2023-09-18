@@ -1,5 +1,8 @@
-package com.song.dream.common.po;
+package com.song.dream.dal.po.base;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 import java.util.Date;
@@ -17,6 +20,7 @@ public class BasePO {
 
     /**
      * id
+     * mybatis-plus框架默认的主键策略就是雪花算法
      */
     private Long id;
 
@@ -42,8 +46,9 @@ public class BasePO {
 
     /**
      * 删除标识（0-未删除，1-已删除）
+     * mybatis-plus框架默认的删除逻辑就是0未删除，1删除
      */
-    // todo @TableLogic
+    @TableLogic
     private Integer delFlag;
 
 }

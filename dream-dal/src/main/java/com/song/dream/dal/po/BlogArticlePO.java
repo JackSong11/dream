@@ -3,7 +3,7 @@ package com.song.dream.dal.po;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.song.dream.common.po.BasePO;
+import com.song.dream.dal.po.base.BasePO;
 import lombok.Data;
 
 /**
@@ -14,11 +14,6 @@ import lombok.Data;
 @TableName(value = "blog_article")
 @Data
 public class BlogArticlePO extends BasePO {
-
-    /**
-     * 文章Id
-     */
-//    @TableId
 
     /**
      * 发布日期

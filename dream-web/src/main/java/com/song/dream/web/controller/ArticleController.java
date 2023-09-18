@@ -18,11 +18,25 @@ import java.util.List;
 @RestController
 public class ArticleController {
 
-    @Resource private BlogArticleService blogArticleService;
+    @Resource
+    private BlogArticleService blogArticleService;
 
     @GetMapping("query")
-    public List<BlogArticlePO> queryArticle(){
+    public List<BlogArticlePO> queryArticle() {
         List<BlogArticlePO> list = blogArticleService.list();
         return list;
+    }
+
+    @GetMapping("insert")
+    public boolean insertArticle() {
+        BlogArticlePO blogArticlePO = new BlogArticlePO();
+        blogArticlePO.setTitle("测试insert");
+        boolean save = blogArticleService.save(blogArticlePO);
+        return save;
+    }
+
+    @GetMapping("delete")
+    public boolean deleteArticle() {
+        return blogArticleService.removeById(3);
     }
 }
