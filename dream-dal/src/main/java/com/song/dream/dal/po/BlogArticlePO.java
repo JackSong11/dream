@@ -8,13 +8,12 @@ import lombok.Data;
 
 /**
  * 文章表
+ *
  * @TableName blog_article
  */
-@TableName(value ="blog_article")
+@TableName(value = "blog_article")
 @Data
 public class BlogArticlePO extends BasePO {
-
-    private static final long serialVersionUID = 1L;
 
     /**
      * 文章Id
