@@ -47,6 +47,7 @@ public class BasePO {
     /**
      * 删除标识（0-未删除，1-已删除）
      * mybatis-plus框架默认的删除逻辑就是0未删除，1删除
+     * 默认值: @TableLogic(value = "0",delval = "1")
      */
     @TableLogic
     private Integer delFlag;
