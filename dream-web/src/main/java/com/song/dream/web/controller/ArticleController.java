@@ -37,6 +37,6 @@ public class ArticleController {
 
     @GetMapping("delete")
     public boolean deleteArticle() {
-        return blogArticleService.removeById(3);
+        return blogArticleService.removeById(3L);
     }
 }
