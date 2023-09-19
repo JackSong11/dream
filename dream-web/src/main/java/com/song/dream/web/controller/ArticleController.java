@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,10 +42,14 @@ public class ArticleController {
     }
 
     @GetMapping("queryVersion")
-    public BlogArticlePO queryVersionArticle() {
-        BlogArticlePO byId = blogArticleService.getById(1703780987949006850L);
-        byId.setTitle("测试insertVersion");
+    public boolean queryVersionArticle() {
+        //BlogArticlePO byId = blogArticleService.getById(1703780987949006850L);
+        BlogArticlePO byId = new BlogArticlePO();
+        byId.setId(1703780987949006850L);
+        byId.setTitle("测试insertVersion11");
+        //byId.setVersion(10);
         boolean b = blogArticleService.updateById(byId);
-        return byId;
+        System.out.println(b);
+        return b;
     }
 }
