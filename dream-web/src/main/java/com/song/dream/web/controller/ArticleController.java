@@ -39,4 +39,12 @@ public class ArticleController {
     public boolean deleteArticle() {
         return blogArticleService.removeById(3L);
     }
+
+    @GetMapping("queryVersion")
+    public BlogArticlePO queryVersionArticle() {
+        BlogArticlePO byId = blogArticleService.getById(1703780987949006850L);
+        byId.setTitle("测试insertVersion");
+        boolean b = blogArticleService.updateById(byId);
+        return byId;
+    }
 }

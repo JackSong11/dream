@@ -3,8 +3,11 @@ package com.song.dream.dal.po;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 import com.song.dream.dal.po.base.BasePO;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 文章表
@@ -13,6 +16,8 @@ import lombok.Data;
  */
 @TableName(value = "blog_article")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BlogArticlePO extends BasePO {
 
     /**
@@ -49,5 +54,11 @@ public class BlogArticlePO extends BasePO {
      * 浏览量
      */
     private Integer readCount;
+
+    /**
+     * 版本号
+     */
+    @Version
+    private Integer version;
 
 }
