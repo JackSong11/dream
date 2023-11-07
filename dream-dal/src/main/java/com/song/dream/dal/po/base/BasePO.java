@@ -50,6 +50,6 @@ public class BasePO {
      * 默认值: @TableLogic(value = "0",delval = "1")
      */
     @TableLogic
-    private Integer delFlag;
+    private Integer isDeleted;
 
 }
