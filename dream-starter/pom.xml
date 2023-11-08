@@ -34,7 +34,27 @@
     </dependencies>
 
 
-
+    <build>
+        <plugins>
+            <!-- 多模块聚合打包，这里的maven-plugin缺少不了，具体原因还没百度。	-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.12.RELEASE</version>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <finalName>dream</finalName>
+    </build>
 
 
 
