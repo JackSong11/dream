@@ -1,10 +1,8 @@
 package com.song.dream.common.enums.message;
 
 
-import lombok.extern.slf4j.Slf4j;
 
 
-@Slf4j
 public enum RouteEnum {
 
     MATTER_DETAIL_ROUTE(
